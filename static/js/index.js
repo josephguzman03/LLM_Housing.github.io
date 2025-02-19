@@ -14,3 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+$(document).ready(function(){
+    $("#intro .container").load("sections/intro.html");
+    $("#methods .container").load("sections/methods.html");
+    $("#apps .container").load("sections/apps.html");
+    $("#team .container").load("sections/team.html");
+  });

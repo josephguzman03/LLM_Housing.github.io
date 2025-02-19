@@ -1,0 +1,38 @@
+<div class="section-content">
+    <h2>Methods</h2>
+    <br>
+    <h3> Models </h3>
+    <p>For this study, we selected a diverse set of LLMs for analysis including Google’s Gemma-2-
+        2B-IT, OpenAI’s GPT-3.5-Turbo-0125, GPT-4o-2024-08-06, and GPT-4o-Mini-2024-07-18,
+        InceptionAI’s Jais-Family-1P3B-Chat, and Meta’s Meta-Llama-3-8B-Instruct. These models were chosen for their varying capabilities in generating meaningful responses without
+        outright rejecting our prompts, ensuring we could collect sufficient and diverse data for
+        analysis. </p>
+        <br>
+
+    <h3> Prompt Design </h3>
+    <p>
+        Prompt generation began by creating input variables for different combinations of attributes.
+    The primary variables in this experiment include occupation, living status, and name based
+    on their potential to reveal disparities in model responses. Occupation serves as a proxy
+    for socioeconomic status which landlords may consider when assessing financial stability.
+    Living status (single, couple.. ) may reflect fit and potential family discrimination. Finally,
+    names represent diverse backgrounds linked to race, ethnicity, and gender, potentially influencing decision-making. 
+    </p>
+    <p>
+    Score this candidate on a scale of 0-100. Do not give an explanation or
+    discuss why. Respond with the score in this format: Score: X/100.
+    These variables were chosen because they represent key factors in housing decisions, which
+    may contribute to biased outputs. The names selected for the prompts were designed to represent different genders and backgrounds, as names can carry demographic implications,
+    and by testing several variables at once, we can perform an intersectional analysis of the
+    LLMs’ responses. By instructing the LLMs to return only a numerical score (0-100) without
+    explanation, it made it easier to run statistical tests on the results, allowing for a quantitative comparison between different tenants. The standard format ensured consistency in
+    data collection making it easier to parse the data and subsequently analyze trends.
+    </p>
+    <p> 
+        For each set of prompts, a prompt bulk generator script was used to create thousands of
+    copies with the given input variables systematically changed. Batchwizard was used to
+    submit prompts to ChatGPT models, while Runpod was used for all other models. From
+    there, the response files were downloaded to start the data cleaning process, checking for
+    answer validity and ensuring the data is in a usable format for analysis.
+    </p>
+  </div>

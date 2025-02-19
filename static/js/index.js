@@ -20,6 +20,9 @@ $(document).ready(function(){
     $("#methods .container").load("sections/methods.html");
     $("#apps .container").load("sections/apps.html");
     $("#team .container").load("sections/team.html");
+    $("#results .container").load("sections/results.html");
+    $("#references .container").load("sections/references.html");
+
   });
 
   

@@ -79,7 +79,7 @@ html, body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: #b3cde0;
+    background-color: #fedebe;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,61 +91,84 @@ html, body {
 
 .full-screen-banner input[type="text"] {
     max-width: 400px; /* Limits the width of the text box */
-    margin-top: 20px; /* Adds some space above the text box */
+    margin-top: 70px; /* Adds some space above the text box */
 }
 
-@media (max-width: 768px) {
-    .full-screen-banner input[type="text"] {
-        max-width: 300px; /* Smaller width on smaller screens */
-        margin-top: 10px; /* Less space on smaller screens */
-    }
-}
 
   .content {
     height: 2000px;
     position: relative;
   }
 
-#go-to-bottom {
-    position: absolute;
-    top: 10px;
-    /* Without this, the button will be aligned to the top of the page
-    instead of bottom of navbar when scrolled */
-    scroll-margin-top: 60px;
-  }
-  #go-to-top {
-    position: absolute;
-    bottom: 10px;
-    scroll-margin-bottom: 0;
-  }
-  button {
-    cursor: pointer;
-    font-weight: 700;
-    transition: all 0.2s;
-    padding: 10px 20px;
-    border-radius: 100px;
-    background: #318CE7;
-    border: 1px solid transparent;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-  }
+ 
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #fedebe;
+  color: #333;
+}
+
+.our-team{
+  border: 1px solid #dedede;
+  text-align: center;
+  color: #8b2635;
+  overflow: hidden;
+  transition: all 0.3s ease 0s;
+}
+.our-team:hover{
+  background: #8b2635;
+  color: #fff;
+}
+.our-team .pic{ position: relative; }
+.our-team .pic img{
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease 0s;
+}
+.our-team:hover .pic img{ transform: translateY(-20px); }
+.our-team .social{
+  width: 20%;
+  height: 100%;
+  background: #8b2635;
+  padding: 20px 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  left: -50%;
+  transition: all 0.5s ease 0s;
+}
+.our-team:hover .social{ left: 0; }
+.our-team .social li{ display: block; }
+.our-team .social li a{
+  display: block;
+  padding: 10px 0;
+  font-size: 20px;
+  color: #fff;
+  transition: all 0.5s ease 0s;
+}
+.our-team .social li a:hover{ color: #ff9b19; }
+.our-team .team-content{ padding: 25px 0; }
+.our-team .title{
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+.our-team .post{
+  display: block;
+  font-size: 15px;
   
-  button:hover {
-    background: #318CE7;
-  }
-  
-  button > svg {
-    width: 34px;
-    margin-left: 10px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  button:hover svg {
-    transform: translateX(5px);
-  }
-  
-  button:active {
-    transform: scale(0.95);
-  }
-  
+}
+@media only screen and (max-width: 990px){
+  .our-team{ margin-bottom: 30px; }
+}
+
+.special-picture img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding: 20px 0;
+}

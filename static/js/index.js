@@ -21,3 +21,5 @@ $(document).ready(function(){
     $("#apps .container").load("sections/apps.html");
     $("#team .container").load("sections/team.html");
   });
+
+  

@@ -1,4 +1,48 @@
 <div class="section-content">
-    <h2>results</h2>
-    <p>Your results content goes here.</p>
+    <h3>Exploratory Data Analysis</h3>
+    <p> Before conducting statistical tests, we first performed data cleaning 
+      and exploratory data analysis to standardize and better understand the data. 
+      We applied a regular expression (regex) to extract the numerical scores from 
+      the LLM responses, considering only those in the format “Score: X/100” where X 
+      ranged from 0 to 100 as valid. This step ensured the responses adhered to the 
+      specified format in our prompts, removing extraneous text and isolating score 
+      values for further analysis. In cases where a response contained multiple 
+      “Score: X/100,” we calculated the average score to maintain a single representative 
+      value per prompt.
+    </p>
+    <br>
+    <p>
+      For the first prompt, a total of 285,120 prompts were created, evenly 
+      distributed across six models, with 47,520 prompts per model. Of these,
+       37,842 prompts were classified as refused, accounting for approximately
+       13.27 percent of the dataset. A response was labeled as refused if the model
+        declined to generate a response, failed to provide a score, or returned a 
+        score in an incorrect format. Even responses formatted as “X / 100” were 
+        considered refusals, as these did not strictly follow the specified “Score: X/100” structure.
+      </p>
+      <br>
+      <p>
+        When examining refusal rates across models for the first prompt, we 
+        observed notable differences in behavior. OpenAI’s gpt-3.5-turbo-0125, gpt-4o-2024-08-06,
+         and gpt-4o-mini-2024-07-18 and Meta’s Meta-Llama-3-8B-Instruct all had exceptionally 
+         low refusal counts, with fewer than 10 refusals each. Google’s gemma-2-2b-it had a 
+         slightly higher refusal count at 238, corresponding to a 0.5 percent refusal rate. 
+         The most striking finding was with Inception AI’s jais-family-1p3b-chat, which 
+         refused 37,594 prompts, resulting in an extremely high refusal rate of 79.11 percent.
+          This suggests that the model either follows much stricter response policies or 
+          struggles with adhering to the specified prompt format. Further exploration of the 
+          data indicates that the latter is more likely.
+      </p>
+
+      <br>
+      <p>
+        Regarding score distribution, the dataset for the first prompt ranged 
+        from 0 to 100, with an overall mean tenant score of 75.398, indicating 
+        that responses were generally rated relatively favorably. However, this 
+        single mean value does not fully capture the variations in performance across 
+        models. The following sections provide a deeper analysis of model performance 
+        and statistical results.
+      </p>
+
+
   </div>

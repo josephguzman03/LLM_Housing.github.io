@@ -1,24 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 body {
     font-family: 'Arimo', sans-serif;
+    gap: 10px;  
+
 }
 
 h1 {
     font-family: 'Arimo', serif;
     font-weight: 300;
     text-align: center;
+    gap: 10px;  
+
 }
 
 h2 {
     font-family: 'Arimo', serif;
     font-weight: 300;
     text-align: center;
+    gap: 10px;  
+
 }
 
 h3 {
     font-family: 'Arimo', serif;
     font-weight: 300;
     text-align: center;
+    gap: 10px;  
+
 }
 
 
@@ -26,6 +34,7 @@ p {
     font-size: 18px;
     color: #333;
     text-align: center;
+    gap: 10px;  
 
 }
 
@@ -323,3 +332,14 @@ button:hover .arrow:before {
   }
 }
 
+.images-container {
+  display: flex;
+  flex-direction: column; /* Stacks the images vertically */
+  align-items: center;    /* Optional: centers the images horizontally */
+  gap: 10px;              /* Optional: adds space between images */
+}
+
+.images-container img {
+  width: 100%; /* Set a fixed width; adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+}

@@ -2,7 +2,7 @@
 <div id="apps-sections">
   <!-- Section 1 -->
   <div id="section1" class="section" style="display: block; opacity: 1;">
-    <h2>Check out the visuals for yourself!</h2>
+    <h2>Check out the App Gallary for yourself! </h2>
     <p>Down below are two prompts, utilized in our research. Select which one you would like to try.</p>
     <div class="container">
       <div class="row">
@@ -63,18 +63,20 @@
   </div>
 
   <!-- Section 2: More Details -->
-  <div id="section2" class="section" style="display: none; opacity: 0;">
-    <h2>Section 2: More Details</h2>
-    <form id="categoryForm" action="#">
+  <div id="section2" class="section" style="display: none; opacity: 0;justify-content: center;">
+    <h2>Categories</h2>
+    <form id="categoryForm" action="#"style="text-align: center; font-weight: 500;"  >
       <label for="cats">Choose a Category to test:</label>
-      <select name="cats" id="cats">
-        <option value="Race">Race</option>
-        <option value="Occupation">Occupation</option>
-        <option value="LivingStatus">Living Status</option>
-        <option value="Gender">Gender</option>
-      </select>
+      <div class="custom-select-wrapper">
+        <select name="cats" id="cats">
+          <option value="Race">Race</option>
+          <option value="Occupation">Occupation</option>
+          <option value="LivingStatus">Living Status</option>
+          <option value="Gender">Gender</option>
+        </select>
+      </div>
     </form>
-    <button id="toSection3Btn">Submit</button>
+    <button id="toSection3Btn" style="display: block; margin: 0 auto;">Submit</button>
   </div>
 
   <!-- Section 3: Results -->

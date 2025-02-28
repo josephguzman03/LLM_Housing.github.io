@@ -1,31 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+.oxygen-light {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.oxygen-regular {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oxygen-bold {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 body {
-    font-family: 'Arimo', sans-serif;
+    font-family: 'Oxygen', sans-serif;
     gap: 10px;  
 
 }
 
 h1 {
-    font-family: 'Arimo', serif;
-    font-weight: 300;
+    font-family: 'Oxygen', serif;
+    font-weight: 700;
     text-align: center;
     gap: 10px;  
 
 }
 
 h2 {
-    font-family: 'Arimo', serif;
-    font-weight: 300;
+    font-family: 'Oxygen', serif;
+    font-weight: 700;
     text-align: center;
     gap: 10px;  
 
 }
 
 h3 {
-    font-family: 'Arimo', serif;
-    font-weight: 300;
+    font-family: 'Oxygen', serif;
+    font-weight: 400;
     text-align: center;
-    gap: 10px;  
+    gap: 20px;  
 
 }
 
@@ -72,6 +92,10 @@ html, body {
 .full-screen-banner h1 {
     font-size: 2.5em; /* Adjust font size as necessary */
     margin-bottom: 20px; /* Space between the title and the button */
+}
+
+label {
+  justify-content: center;
 }
 
 .card-container {
@@ -342,4 +366,51 @@ button:hover .arrow:before {
 .images-container img {
   width: 100%; /* Set a fixed width; adjust as needed */
   height: auto; /* Maintain aspect ratio */
+}
+
+.custom-select-wrapper {
+  position: relative;
+  /* Center the wrapper if needed; adjust or remove positioning if it conflicts with your layout */
+  margin: 20px auto;
+  width: 250px;
+}
+
+.custom-select-wrapper select {
+  background-color: #645bff;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+/* If you want to add the FontAwesome icon, ensure FontAwesome is loaded */
+.custom-select-wrapper::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.custom-select-wrapper:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Optional: If you want to adjust the option styling */
+.custom-select-wrapper select option {
+  padding: 30px;
 }

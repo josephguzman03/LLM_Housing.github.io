@@ -1,50 +1,55 @@
 <div class="section-content">
     <h3>Exploratory Data Analysis</h3>
-    <p> Before conducting statistical tests, we first performed data cleaning 
-      and exploratory data analysis to standardize and better understand the data. 
-      We applied a regular expression (regex) to extract the numerical scores from 
-      the LLM responses, considering only those in the format “Score: X/100” where X 
-      ranged from 0 to 100 as valid. This step ensured the responses adhered to the 
-      specified format in our prompts, removing extraneous text and isolating score 
-      values for further analysis. In cases where a response contained multiple 
-      “Score: X/100,” we calculated the average score to maintain a single representative 
-      value per prompt.
+    <p> 
+      We first cleaned and standardized the data, extracting numerical scores using regex and ensuring consistency in formatting. If multiple scores appeared in a response, we averaged them to maintain a single value per prompt.
     </p>
-    <br>
     <p>
-      For the first prompt, a total of 285,120 prompts were created, evenly 
-      distributed across six models, with 47,520 prompts per model. Of these,
-       37,842 prompts were classified as refused, accounting for approximately
-       13.27 percent of the dataset. A response was labeled as refused if the model
-        declined to generate a response, failed to provide a score, or returned a 
-        score in an incorrect format. Even responses formatted as “X / 100” were 
-        considered refusals, as these did not strictly follow the specified “Score: X/100” structure.
+    Out of 285,120 prompts, 13.27% (37,842) were classified as refusals, where models either declined to respond or returned an incorrectly formatted score. Most models had very low refusal rates, with OpenAI and Meta’s models refusing fewer than 10 prompts each. Google’s gemma-2-2b-it had a 0.5% refusal rate, while InceptionAI’s jais-family-1p3b-chat stood out with a refusal rate of 79.11%, likely due to difficulties following the prompt format.
+      </p>
+      <p>
+        Score distribution ranged from 0 to 100, with an overall mean of 75.4, suggesting generally favorable responses. However, model-specific variations in performance required further analysis, detailed in the next sections.
       </p>
       <br>
+      <h3>Prompt 1 Results </h3>
+      <br>
+      <h4>Differences by Gender</h4>
+      <p> 
+        To start off, our analysis of gender-based score differences showed that while median scores remained consistent (typically 80–85), the spread and presence of outliers varied across models. OpenAI’s models produced stable scores across gender groups, with mean values between 77 and 83. In contrast, Google’s gemma-2-2b-it had a lower median score of 65. InceptionAI’s jais-family-1p3b-chat and Meta’s Meta-Llama-3-8B-Instruct exhibited broader distributions, spanning 0 to 100. Most models showed left-skewed distributions, indicating a higher frequency of high scores.      </p>
+      <img src="static/images/p1plots/distribution_of_responses_for_each_model_model_gender.png" alt="dist_img">
+
       <p>
-        When examining refusal rates across models for the first prompt, we 
-        observed notable differences in behavior. OpenAI’s gpt-3.5-turbo-0125, gpt-4o-2024-08-06,
-         and gpt-4o-mini-2024-07-18 and Meta’s Meta-Llama-3-8B-Instruct all had exceptionally 
-         low refusal counts, with fewer than 10 refusals each. Google’s gemma-2-2b-it had a 
-         slightly higher refusal count at 238, corresponding to a 0.5 percent refusal rate. 
-         The most striking finding was with Inception AI’s jais-family-1p3b-chat, which 
-         refused 37,594 prompts, resulting in an extremely high refusal rate of 79.11 percent.
-          This suggests that the model either follows much stricter response policies or 
-          struggles with adhering to the specified prompt format. Further exploration of the 
-          data indicates that the latter is more likely.
+        We used the Kruskal-Wallis test since the models didn’t meet parametric assumptions. Significant differences were found in multiple models: Google’s gemma-2-2b-it showed differences across all gender groups, while OpenAI’s and Meta’s models varied mostly between gender-neutral and woman groups. Despite these findings, the largest mean gap was just 1.41 points, making the differences statistically significant but practically negligible.
+        </p>
+
+      <h4>Differences by Occupation</h4>
+      <p>
+        Occupational labels had a stronger impact on model scores than gender or race. OpenAI’s models and Google’s gemma-2-2b-it showed more consistent scores, while InceptionAI’s jais-family-1p3b-chat and Meta’s Meta-Llama-3-8B-Instruct had wider score ranges with more outliers. InceptionAI and Meta’s models showed greater score disparities, while OpenAI’s and Google’s models followed more stable patterns. These results suggest that some models are more sensitive to occupational labels than others.
+      </p>
+      <img src="static/images/p1plots/distribution_of_responses_for_each_model_model_occupation.png" alt="dist_img">
+
+      <p>
+        Models assigned higher scores to doctors, software engineers, and teachers, while unemployed individuals received the lowest. Google’s gemma-2-2b-it and OpenAI’s models showed the most variation, with score gaps between doctors and unemployed individuals ranging from 26.76 to 43.78 points—far greater than differences for gender or race. InceptionAI’s model showed minimal variation but had the highest refusal rate (79.11%). These results suggest occupational biases in AI models, which could reinforce socioeconomic inequalities in automated decision-making.
+      </p>
+      <h4>Differences by Living Status</h4>
+      <p>
+        No single living status category consistently received the highest scores across models. OpenAI’s models assigned similar scores across groups, while Google’s gemma-2-2b-it and Meta’s Meta-Llama-3-8B-Instruct showed more variation, with individuals living alone or with a spouse tending to score higher.
       </p>
 
-      <br>
+      <img src="static/images/p1plots/distribution_of_responses_for_each_model_model_living_status.png" alt="dist_img">
+
       <p>
-        Regarding score distribution, the dataset for the first prompt ranged 
-        from 0 to 100, with an overall mean tenant score of 75.398, indicating 
-        that responses were generally rated relatively favorably. However, this 
-        single mean value does not fully capture the variations in performance across 
-        models. The following sections provide a deeper analysis of model performance 
-        and statistical results.
+        Statistical tests confirmed significant differences in some models, with Google’s gemma-2-2b-it showing the most variation (13 out of 15 significant comparisons) and the largest mean difference of 5.36. Meta’s model followed closely, while OpenAI’s models exhibited smaller differences, with maximum mean gaps below 1.6. InceptionAI’s jais-family-1p3b-chat showed no significant differences, indicating uniform treatment of living status.
       </p>
-      <h3>Prompt 1 Results </h3>
+      <p>
+        Overall, while some models distinguished between living status groups, these differences were relatively small, especially compared to occupation-related disparities.
+      </p>
+      <h4>Differences by Several Variables</h4>
+
       <h3>Prompt 2 Results </h3>
+      <h4>Differences by Gender</h4>
+      <h4>Differences by Credit Score </h4>
+      <h4>Differences by Eviction Status</h4>
+
       <h3>Conclusion </h3>
 
 

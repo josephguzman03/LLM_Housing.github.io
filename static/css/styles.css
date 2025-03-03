@@ -1,4 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+.custom-section {
+  margin: 20px;
+}
+img {
+  width: 100%;
+}
+.custom-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+/* The first and third paragraphs (with class 'left') will be placed in the first column */
+.content-wrapper .left {
+  grid-column: 1;
+}
+
+/* The second paragraph (with class 'right') will be placed in the second column */
+.content-wrapper .right {
+  grid-column: 2;
+}
+
+/* Optionally, you can force the third paragraph to start on a new row */
+.content-wrapper .left:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
 
 .oxygen-light {
   font-family: "Oxygen", sans-serif;
@@ -50,6 +82,13 @@ h3 {
 }
 
 
+h4 {
+  font-family: 'Oxygen', serif;
+  font-weight: 400;
+  text-align: center;
+  gap: 20px;  
+
+}
 p {
     font-size: 18px;
     color: #333;

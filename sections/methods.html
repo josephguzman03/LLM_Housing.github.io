@@ -2,50 +2,68 @@
     <h2>Methods</h2>
     <br>
     <h3> Models </h3>
-    <p>For this study, we selected a diverse set of LLMs for analysis including Google’s Gemma-2-
-        2B-IT, OpenAI’s GPT-3.5-Turbo-0125, GPT-4o-2024-08-06, and GPT-4o-Mini-2024-07-18,
-        InceptionAI’s Jais-Family-1P3B-Chat, and Meta’s Meta-Llama-3-8B-Instruct. These models were chosen for their varying capabilities in generating meaningful responses without
-        outright rejecting our prompts, ensuring we could collect sufficient and diverse data for
-        analysis. </p>
-        <br>
+    <p>We analyzed six LLMs: Google’s Gemma-2-2B-IT, OpenAI’s GPT-3.5-Turbo-0125, GPT-4o-2024-08-06, GPT-4o-Mini-2024-07-18, InceptionAI’s Jais-Family-1P3B-Chat, and Meta’s Meta-Llama-3-8B-Instruct. These models were selected for their ability to generate responses without outright refusals, ensuring a sufficient dataset.
+    </p>
+    <br>
 
     <h3> Prompt Design </h3>
     <p>
-        Prompt generation began by creating input variables for different combinations of attributes.
-    The primary variables in this experiment include occupation, living status, and name based
-    on their potential to reveal disparities in model responses. Occupation serves as a proxy
-    for socioeconomic status which landlords may consider when assessing financial stability.
-    Living status (single, couple.. ) may reflect fit and potential family discrimination. Finally,
-    names represent diverse backgrounds linked to race, ethnicity, and gender, potentially influencing decision-making. 
+        Prompt engineering began by systematically generating thousands of prompts using a bulk generator script, varying occupation, living status, and name to assess biases in LLM responses. Testing multiple variables at once enabled intersectional analysis of tenant evaluation outcomes.
+
     </p>
     <p>
-    Score this candidate on a scale of 0-100. Do not give an explanation or
-    discuss why. Respond with the score in this format: Score: X/100.
-    These variables were chosen because they represent key factors in housing decisions, which
-    may contribute to biased outputs. The names selected for the prompts were designed to represent different genders and backgrounds, as names can carry demographic implications,
-    and by testing several variables at once, we can perform an intersectional analysis of the
-    LLMs’ responses. By instructing the LLMs to return only a numerical score (0-100) without
-    explanation, it made it easier to run statistical tests on the results, allowing for a quantitative comparison between different tenants. The standard format ensured consistency in
-    data collection making it easier to parse the data and subsequently analyze trends.
+Each prompt instructed LLMs to return only a numerical score (0-100) without explanations, ensuring consistency for statistical testing and simulating real-world tenant scoring systems (Desai 2024). Batchwizard was used to submit prompts to OpenAI models, while Runpod processed other models. The response files were then downloaded, cleaned, and validated to confirm data quality before analysis.
+
     </p>
-    <p> 
-        For each set of prompts, a prompt bulk generator script was used to create thousands of
-    copies with the given input variables systematically changed. Batchwizard was used to
-    submit prompts to ChatGPT models, while Runpod was used for all other models. From
-    there, the response files were downloaded to start the data cleaning process, checking for
-    answer validity and ensuring the data is in a usable format for analysis.
-    </p>
+
 
     <h3>Statstical Techique</h3>
     <p> 
-        To analyze our results, we applied statistical tests to assess the impact 
-        of race, gender, living status, and occupation on LLMs’ scores for tenants.
-         Since the data did not meet the assumptions for classic parametric tests, as 
-         determined by Shapiro-Wilk tests for normality and Levene’s test for homogeneity of 
-         variance, we utilized non-parametric methods. Specifically, we applied the 
-         Kruskal-Wallis test, followed by Dunn’s test if a significant difference was observed. 
-         To control for multiple comparisons, we applied a Bonferroni correction 
-         to the aforementioned tests.
+    Since the data didn’t meet parametric assumptions (per Shapiro-Wilk and Levene’s tests), we applied the Kruskal-Wallis test to identify differences across demographic groups. Significant results were further examined with Dunn’s test using Bonferroni correction for multiple comparisons.
+
     </p>
     
+    <h3> Prompt 1: Apartment Inquiry</h3>
+    <p>
+        Prompt generation began by creating input variables for different combinations 
+        of attributes. The primary variables in this experiment include ‘occupation’, 
+        ‘living status’, and ‘name’ based on their potential to reveal disparities in 
+        model responses. ‘Occupation’ serves as a proxy for socioeconomic status which 
+        landlords may consider when assessing financial stability. Eleven different 
+        occupations were used, including “Doctor”, “Software engineer”, “Accountant”,
+         “Teacher”, “Retail Associate”, “Construction Worker”, “Food Service Worker”, 
+         “College Student”, “Government Worker”, “Unemployed”, and finally a control
+          option where no occupation was given. The ‘living status’ variable included 
+          “just myself”, “my roommate and I”, “my pet and I”, “my spouse and I”, 
+          “my family with kids” and again a control option. This may reflect 
+          potential bias against different family units. Finally, ‘name’ encodes race 
+          and gender into the prompt without explicitly stating this information, 
+          which has been effective in revealing implicit bias in previous studies 
+          (Salinas, 9-10). Three prompts were generated for each of the variable 
+          combinations, creating 47,520 prompts in total.
+    </p>
+
+    <h3> Prompt 2: Tenant Application   </h3>
+    <p> 
+        The second prompt explores how previous evictions and credit scores can affect 
+        a potential tenant's application if a landlord inputs their information into a 
+        large language model. The primary variables in this prompt include ‘eviction’, 
+        ‘credit_score’, and ‘name’, which help uncover potential biases in the model’s
+         evaluation process. ‘Eviction’ examines how a tenant’s eviction history is
+          perceived as a risk factor. We included four distinct conditions: no record 
+          of eviction, previously been evicted, previously been evicted six years ago,
+           and gone to eviction court but had their case dismissed. Since an eviction
+            typically stays on record for seven years, we wanted to test whether a model 
+            accounts for this cutoff or if it continues to penalize applicants beyond 
+            that period. For ‘credit_score’, we selected a range of values from 500 to 850 
+            to examine whether the model heavily weighs financial history when assigning
+             a rental score. Since landlords often use credit scores to assess financial 
+             responsibility, we wanted to see whether the model’s scoring aligns with 
+             conventional credit thresholds or reveals unexpected disparities. Finally, 
+             similar to Prompt 1, we included ‘name’ as a variable to analyze whether 
+             different names, which may carry demographic or cultural associations, 
+             influence the model’s response.
+
+
+    </p>
   </div>

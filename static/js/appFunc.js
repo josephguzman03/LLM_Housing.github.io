@@ -207,7 +207,7 @@ newPromptBtn.addEventListener('click', () => {
 newCategoryBtn5.addEventListener('click', () => {
   console.log("newCategoryBtn5 clicked");
   fadeOut(section5, () => {
-    fadeIn(section2);
+    fadeIn(section4);
   });
 });
 

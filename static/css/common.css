@@ -73,7 +73,7 @@ h3, h4 {
 
 /* Form and Button Defaults */
 input, button {
-  outline-color: hsl(0 0% 0%);
+  outline-color: hsl(0 10% 0%);
   font-family: sans-serif;
   font-weight: bold;
   cursor: pointer;
@@ -90,10 +90,10 @@ input, button > span {
 button {
   background: #645bff;
   color: #fff;
-  border: 0;
+  border: 20;
 }
 button:hover {
-  background-color: #111;
+  background-color: lightgray;
 }
 
 /* Footer */

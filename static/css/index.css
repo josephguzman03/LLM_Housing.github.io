@@ -1,0 +1,53 @@
+/* index.css */
+
+/* Navigation Bar (if you need custom overrides beyond Bootstrap) */
+.nav-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Full-screen banner */
+  .full-screen-banner {
+    background: url("../images/banner_index.jpg") center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+  }
+  .full-screen-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+  .full-screen-banner h1,
+  .full-screen-banner .button-container {
+    position: relative;
+    z-index: 2;
+  }
+  .full-screen-banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  .full-screen-banner input[type="text"] {
+    max-width: 400px;
+    margin-top: 70px;
+  }
+  
+  /* Button container on the index page */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  

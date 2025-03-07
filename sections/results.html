@@ -1,4 +1,6 @@
 <div class="section-content">
+  <link rel="stylesheet" href="static/css/common.css">
+
     <h3>Exploratory Data Analysis</h3>
     <p> 
       We first cleaned and standardized the data, extracting numerical scores using regex and ensuring consistency in formatting. If multiple scores appeared in a response, we averaged them to maintain a single value per prompt.
@@ -12,6 +14,10 @@
       <br>
       <h3>Prompt 1 Results </h3>
       <br>
+      <h4>Differences by Race</h4>
+      <img src="static/images/p1plots/distribution_of_responses_for_each_model_model_race.png" alt="dist_img">
+
+    
       <h4>Differences by Gender</h4>
       <p> 
         To start off, our analysis of gender-based score differences showed that while median scores remained consistent (typically 80–85), the spread and presence of outliers varied across models. OpenAI’s models produced stable scores across gender groups, with mean values between 77 and 83. In contrast, Google’s gemma-2-2b-it had a lower median score of 65. InceptionAI’s jais-family-1p3b-chat and Meta’s Meta-Llama-3-8B-Instruct exhibited broader distributions, spanning 0 to 100. Most models showed left-skewed distributions, indicating a higher frequency of high scores.      </p>
@@ -46,9 +52,20 @@
       <h4>Differences by Several Variables</h4>
 
       <h3>Prompt 2 Results </h3>
+
+      <h4>Differences by Race</h4> 
+      <img src="static/images/p2plots/distribution_of_responses_for_each_model_model_race.png" alt="dist_img">
+
+
       <h4>Differences by Gender</h4>
+      <img src="static/images/p2plots/distribution_of_responses_for_each_model_model_gender.png" alt="dist_img">
+
       <h4>Differences by Credit Score </h4>
+      <img src="static/images/p2plots/distribution_of_responses_for_each_model_model_credit_scores.png" alt="dist_img">
+
+  
       <h4>Differences by Eviction Status</h4>
+      <img src="static/images/p2plots/distribution_of_responses_for_each_model_model_eviction.png" alt="dist_img">
 
       <h3>Conclusion </h3>
 

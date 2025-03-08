@@ -16,8 +16,13 @@
       <h3>Prompt 1 Results </h3>
       <br>
       <h4>Differences by Race</h4>
+      <p> 
+        In analyzing racial differences in tenant scores, median values hovered around 80–85, but overall distributions varied. OpenAI’s models showed minimal variation across racial groups, maintaining mean scores of 76–83 with lower standard deviations. In contrast, Google’s gemma-2-2b-it had a more normal distribution but lower medians (around 65). InceptionAI’s Jais-Family-1P3B-Chat and Meta’s Llama-3-8B-Instruct produced wider score ranges (spanning from near-zero to 100), often exhibiting more extreme outliers. These findings suggest that while some models remain relatively consistent, others introduce broader and potentially more impactful variations in tenant scoring across racial groups.
+      </p>
       <img src="static/images/p1plots/distribution_of_responses_for_each_model_model_race.png" alt="dist_img">
-
+      <p>
+        Statistical tests showed that most models produced significantly different score distributions across racial groups, with the lone exception being OpenAI’s gpt-3.5-Turbo-0125. Google’s gemma-2-2b-it exhibited the most disparities, while InceptionAI’s Jais-Family-1P3B-Chat showed only one significant difference (between Chinese and Jewish groups). Although the largest mean gaps ranged from about 1 to 3 points on a 0–100 scale—raising questions about practical impact—some models recorded much larger median differences of up to 10 points. This suggests that, in certain scenarios, LLM-generated scores may have notable real-world implications for tenant evaluation.
+      </p>
     
       <h4>Differences by Gender</h4>
       <p> 
@@ -50,26 +55,45 @@
       <p>
         Overall, while some models distinguished between living status groups, these differences were relatively small, especially compared to occupation-related disparities.
       </p>
-      <h4>Differences by Several Variables</h4>
 
       <h3>Prompt 2 Results </h3>
-
+      <br>
       <h4>Differences by Race</h4> 
+      <p>
+        In the second housing prompt, racial score differences varied notably among LLMs. OpenAI’s gpt-3.5-Turbo-0125 and gpt-4o-Mini-2024-07-18 showed relatively tight ranges with medians clustered between 60 and 85, whereas Google’s gemma-2-2b-it produced a lower median and broader distribution. Meta’s Llama models and Microsoft’s Phi-3-mini-4k-instruct also displayed wider score spreads, indicating more inconsistency in how these models evaluated different racial groups compared to OpenAI’s offerings.
+      </p>
       <img src="static/images/p2plots/distribution_of_responses_for_each_model_model_race.png" alt="dist_img">
-
+      <p>
+        Because the data did not meet normality assumptions, the Kruskal-Wallis test revealed mixed results. Google’s gemma-2-2b-it and OpenAI’s gpt-4o-Mini-2024-07-18 showed no statistically significant racial differences, while OpenAI’s gpt-3.5-Turbo-0125, OpenAI’s gpt-4o-2024-08-06, and Meta’s Llama-3.2-3B-Instruct did. Pairwise comparisons in these latter models identified notable gaps between None-control and specific racial groups. Such inconsistencies underscore the potential for bias in certain LLMs and the need for further research on how training data and methodologies influence these disparities.
+      </p>
 
       <h4>Differences by Gender</h4>
+      <p> 
+        Most models scored women, men, and gender-neutral names similarly, with median scores often aligning across gender conditions. However, Google’s gemma-2-2b-it gave notably lower median scores (around 40) while still achieving some high outliers, and Meta-Llama-3-2-3B-Instruct produced a slightly lower median for women despite similar average scores for men and women. Interestingly, every model scored the gender-neutral name higher on average than both women and men. While OpenAI’s gpt-3.5-Turbo-0125 had a relatively narrow score distribution (roughly 40–97), Google’s gemma-2-2b-it ranged from 0 to 100 and was the only model showing pronounced right skew. Though these differences are modest, they could still influence real-world decisions in tenant evaluations.   
+      </p>
       <img src="static/images/p2plots/distribution_of_responses_for_each_model_model_gender.png" alt="dist_img">
-
+      <p> 
+        Since the models did not meet normality and equal variance assumptions, the Kruskal-Wallis test showed that nearly all models—except Microsoft’s Phi-3-mini-4k-instruct—produced statistically significant differences in scores between gender conditions. While the largest absolute mean difference was only 1.314, Meta’s Llama-3.2-3B-Instruct showed a 5-point median gap favoring men over women. Even a 5-point variance on a 0–100 scale could have a meaningful impact in real-world housing decisions, underscoring the importance of monitoring potential biases in LLM-generated tenant scores.
+      </p>
       <h4>Differences by Credit Score </h4>
+      <p> Across different credit score tiers, LLMs vary in their tenant scoring consistency. OpenAI’s gpt-4o-2024-08-06 and gpt-4o-Mini-2024-07-18 generally produce tightly clustered scores with fewer outliers, suggesting a more uniform handling of credit data. Meanwhile, Google’s gemma-2-2b-it and Meta’s Llama-3.2-3B-Instruct exhibit broader distributions, implying greater variability in how they assess financial credibility. These discrepancies highlight the need to scrutinize how each model interprets credit profiles in real-world housing applications.
+      </p>
       <img src="static/images/p2plots/distribution_of_responses_for_each_model_model_credit_scores.png" alt="dist_img">
-
+      <p>
+        Across all tested LLMs, individuals with higher credit scores (750–850) consistently received more favorable tenant evaluations. While this trend aligns with traditional financial assessments, it also raises questions about whether LLMs amplify existing barriers to housing for those with lower credit. In particular, Google’s gemma-2-2b-it and Meta’s Llama models showed broader score distributions for lower-credit groups, indicating greater variability and potential inconsistency in decision-making. The Kruskal-Wallis test revealed statistically significant differences between all credit score categories, underscored by strong pairwise comparisons—especially when comparing lower (500) and higher (750 or 850) scores. This pattern held true across multiple LLMs, reinforcing that these models, as currently configured, may systematically favor applicants with stronger credit profiles while treating borderline or unknown-credit applicants inconsistently.
+      </p>
   
       <h4>Differences by Eviction Status</h4>
+      <p>
+        Across all models, tenants with any mention of eviction received notably lower scores, although the extent varied by model. Google’s gemma-2-2b-it, Meta’s Llama-3.2-3B-Instruct and Llama-3.8B-Instruct, and Microsoft’s Phi-3-mini-4k-instruct showed wide score ranges (roughly 20 to 95), whereas OpenAI’s models were more consistent. Even dismissed eviction cases tended to score lower than having no eviction history, suggesting that simply flagging “eviction”—regardless of fault—could negatively impact scores. Applicants evicted six years ago were treated slightly more favorably than those recently evicted, but overall, prior evictions consistently ranked as a high-risk factor across models.  
+      </p>
       <img src="static/images/p2plots/distribution_of_responses_for_each_model_model_eviction.png" alt="dist_img">
+      <p>
+        After testing eviction status via the Kruskal-Wallis and Dunn’s tests, all pairwise comparisons were statistically significant except one—OpenAI’s gpt-3.5-Turbo-0125 did not distinguish between “no record of eviction” and “gone to eviction court but dismissed.” Notably, “gone to eviction court but dismissed” often scored lower than “no record,” with mean differences ranging from 0.66 up to nearly 15 points. While this bias may seem minor for some models, a consistent gap of 4–7 points—or even up to 18 when comparing medians—could meaningfully impact real-world applications. Therefore, any system using LLM-based tenant scoring should take steps to mitigate unfair penalties associated with even dismissed evictions.  
+      </p>
 
       <h3>Conclusion </h3>
-
+      <p> This audit examined how various Large Language Models (LLMs) generate tenant scores using prompts that include demographic and financial variables. Testing models from OpenAI, Google, Meta, Microsoft, and Inception AI revealed disparities in both refusal rates and scoring, with statistically significant biases across gender, race, credit score, and other factors. Though the comparison of multiple models and realistic prompts strengthens these findings, the focus on San Diego and a limited set of tenant variables restricts the scope. Future studies should broaden their geographic reach, range of prompts, and demographic factors, and compare LLM-based tenant scoring against human decision-making to better understand and address these algorithmic biases. By continuing to research LLM bias in housing, stakeholders and policymakers can be better informed to mitigate potential discriminatory impacts.</p>
 
 
   </div>

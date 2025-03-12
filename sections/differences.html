@@ -1,0 +1,41 @@
+<div class="section-content fade-in">
+    <h2>Differences by Several Variables </h2>
+   
+    <div class="row">
+      <!-- Prompt 1 Column -->
+      <div class="col-md-6">
+        <h3>Prompt 1 Findings</h3>
+        <p>
+          Our analysis identified notable biases across large language models (LLMs), particularly regarding occupation and race. OpenAI’s gpt-4o-2024-08-06 and Google's gemma-2-2b-it showed the highest bias, with significant rejection rates at 22.4% and 17.86%, respectively. Conversely, OpenAI’s gpt-3.5-Turbo-0125 and InceptionAI’s Jais-Family-1P3B-Chat demonstrated no significant biases. Google's gemma-2-2b-it also had pronounced sensitivity in intersections involving gender and living status. These results highlight the need for model adjustments to reduce biases, especially in employment and socioeconomic contexts.          
+          <div class="images-container">
+          <img src="static/images/p1plots/p1 heatmaps/heatmap_google_gemma-2-2b-it_occupation_race.png" alt="gg Heatmap for Prompt 1">
+          <img src="static/images/p1plots/p1 heatmaps/heatmap_meta-llama_meta-llama-3-8b-instruct_occupation_race.png" alt="ml1 for Prompt 1">
+          <img src="static/images/p1plots/p1 heatmaps/heatmap_inceptionai_jais-family-1p3b-chat_occupation_race.png" alt="inc Heatmap for Prompt 1">
+          <img src="static/images/p1plots/p1 heatmaps/heatmap_openai_gpt-3.5-turbo-0125_occupation_race.png" alt="ai1 Heatmap for Prompt 1">
+          <img src="static/images/p1plots/p1 heatmaps/heatmap_openai_gpt-4o-2024-08-06_occupation_race.png" alt="ai2 Heatmap for Prompt 1">
+          <img src="static/images/p1plots/p1 heatmaps/heatmap_openai_gpt-4o-mini-2024-07-18_occupation_race.png" alt="ai3 Heatmap for Prompt 1">
+
+        </div>
+      </div>
+      
+      <!-- Prompt 2 Column -->
+      <div class="col-md-6">
+        <h3>Prompt 2 Findings</h3>
+        <p>
+          Our analysis identified notable biases among AI models related to eviction status, race, gender, and credit scores. Individuals with eviction histories consistently received lower scores, suggesting possible overgeneralization of eviction-related risks. Google's gemma-2-2b-it exhibited the highest variability, significantly penalizing specific racial groups, especially Arabic and Indian applicants. Meta’s Llama-3 models also showed disparities in scoring by race. Microsoft’s Phi-3-2B and OpenAI’s GPT models provided more uniform scores, although GPT-3.5-Turbo-0125 showed signs of overgeneralization. These results suggest certain models, particularly Google's gemma-2-2b-it, may need further adjustments to reduce bias effectively.          </p>
+        <div class="images-container">
+          <img src="static/images/p2plots/p2 heatmaps/heatmap_google_gemma-2-2b-it.png" alt="gg Heatmap for Prompt 2">
+          <img src="static/images/p2plots/p2 heatmaps/heatmap_meta-llama_llama-3.2-3b-instruct.png" alt="ml1 Heatmap for Prompt 2">
+          <img src="static/images/p2plots/p2 heatmaps/heatmap_microsoft_phi-3-mini-4k-instruct.png" alt="micro Heatmap for Prompt 2">
+          <img src="static/images/p2plots/p2 heatmaps/heatmap_openai_gpt-3.5-turbo-0125.png" alt="ai1 Heatmap for Prompt 2">
+          <img src="static/images/p2plots/p2 heatmaps/heatmap_openai_gpt-4o-2024-08-06.png" alt="ai2 Heatmap for Prompt 2">
+          <img src="static/images/p2plots/p2 heatmaps/heatmap_openai_gpt-4o-mini-2024-07-18.png" alt="ai3 Heatmap for Prompt 2">
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+</div>

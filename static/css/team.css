@@ -1,5 +1,3 @@
-/* team.css */
-
 /* Team member card styles */
 .our-team {
     border: 1px solid #dedede;
@@ -8,7 +6,7 @@
     transition: all 0.3s ease;
   }
   .our-team:hover {
-    background: #e7664d;
+    background: #189ad3;
     color: #fff;
   }
   .our-team .pic {
@@ -25,7 +23,7 @@
   .our-team .social {
     width: 20%;
     height: 100%;
-    background: #e7664d;
+    background: #189ad3;
     padding: 20px 0;
     margin: 0;
     list-style: none;
@@ -48,7 +46,7 @@
     transition: all 0.5s ease;
   }
   .our-team .social li a:hover {
-    color: #727E8B;
+    color: black;
   }
   .our-team .team-content {
     padding: 25px 0;

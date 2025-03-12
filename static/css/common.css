@@ -1,5 +1,3 @@
-/* common.css */
-
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 /* Reset and global styles */
@@ -24,6 +22,20 @@ img {
   width: 100%;
 }
 
+#img1 {
+  display: block;
+  margin: 0 auto;
+  width: 600px; /* Adjust as needed */
+  height: auto;
+}
+
+#img2 {
+  display: block;
+  margin: 0 auto;
+  width: 400px; /* Adjust as needed */
+  height: auto;
+}
+
 /* Typography */
 h1, h2, h3, h4, p {
   text-align: center;
@@ -32,8 +44,7 @@ h1, h2, h3, h4, p {
 h1, h2 {
   font-family: 'Oxygen', serif;
   font-weight: 700;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-  1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+
 }
 h3, h4 {
   font-family: 'Oxygen', serif;
@@ -92,12 +103,12 @@ input, button > span {
   padding: 1em 1.3em;
 }
 button {
-  background: #645bff;
+  background: #189ad3;
   color: #fff;
   border: 10;
 }
 button:hover {
-  background-color: #CBC3E3;
+  background-color:  #1E3F66;
 }
 
 /* Footer */
@@ -139,5 +150,5 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 20px;
+  padding: 25px 20px;
 }
